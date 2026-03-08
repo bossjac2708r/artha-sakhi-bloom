@@ -6,21 +6,52 @@ import { ArrowDown, User } from "lucide-react";
 
 const HeroSection = () => (
   <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-earth-cream">
+    {/* Animated gradient overlay */}
+    <motion.div
+      className="absolute inset-0 opacity-30"
+      animate={{
+        background: [
+          "radial-gradient(ellipse at 20% 50%, hsl(var(--earth-warm)) 0%, transparent 70%)",
+          "radial-gradient(ellipse at 80% 50%, hsl(var(--earth-warm)) 0%, transparent 70%)",
+          "radial-gradient(ellipse at 20% 50%, hsl(var(--earth-warm)) 0%, transparent 70%)",
+        ],
+      }}
+      transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+    />
+
     {/* Decorative SVG elements */}
-    <svg className="absolute top-10 left-10 w-24 h-24 opacity-[0.07] text-secondary" viewBox="0 0 100 100" fill="currentColor">
+    <motion.svg
+      className="absolute top-10 left-10 w-24 h-24 opacity-[0.07] text-secondary"
+      viewBox="0 0 100 100"
+      fill="currentColor"
+      animate={{ rotate: 360 }}
+      transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+    >
       <path d="M50 5C30 5 10 25 10 50c0 20 15 35 30 42C55 85 70 70 70 50 70 25 60 5 50 5z" />
-    </svg>
-    <svg className="absolute top-32 right-16 w-16 h-16 opacity-[0.06] text-primary" viewBox="0 0 100 100" fill="currentColor">
+    </motion.svg>
+    <motion.svg
+      className="absolute top-32 right-16 w-16 h-16 opacity-[0.06] text-primary"
+      viewBox="0 0 100 100"
+      fill="currentColor"
+      animate={{ y: [0, -10, 0] }}
+      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+    >
       <circle cx="50" cy="50" r="45" />
-    </svg>
+    </motion.svg>
     <svg className="absolute bottom-40 left-20 w-20 h-20 opacity-[0.05] text-secondary" viewBox="0 0 100 100" fill="currentColor">
       <path d="M50 5C30 5 10 25 10 50c0 20 15 35 30 42C55 85 70 70 70 50 70 25 60 5 50 5z" />
     </svg>
-    <svg className="absolute bottom-20 right-10 w-32 h-32 opacity-[0.06] text-secondary" viewBox="0 0 100 100" fill="currentColor">
+    <motion.svg
+      className="absolute bottom-20 right-10 w-32 h-32 opacity-[0.06] text-secondary"
+      viewBox="0 0 100 100"
+      fill="currentColor"
+      animate={{ scale: [1, 1.05, 1] }}
+      transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+    >
       <path d="M50 5C30 5 10 25 10 50c0 20 15 35 30 42C55 85 70 70 70 50 70 25 60 5 50 5z" />
-    </svg>
+    </motion.svg>
 
-    <div className="container mx-auto px-6 py-20 flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+    <div className="container mx-auto px-6 py-20 flex flex-col lg:flex-row items-center gap-12 lg:gap-16 relative z-10">
       <motion.div
         className="flex-1 text-center lg:text-left"
         initial={{ opacity: 0, y: 30 }}
@@ -41,7 +72,7 @@ const HeroSection = () => (
         <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
           <Button
             size="lg"
-            className="bg-primary text-primary-foreground hover:bg-primary/90 font-sans rounded-full px-8"
+            className="bg-primary text-primary-foreground hover:bg-primary/90 font-sans rounded-full px-8 hover:shadow-lg transition-shadow"
             onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
           >
             <ArrowDown className="w-4 h-4 mr-2" />
@@ -50,7 +81,7 @@ const HeroSection = () => (
           <Button
             variant="outline"
             size="lg"
-            className="border-primary text-primary hover:bg-primary/10 font-sans rounded-full px-8"
+            className="border-primary text-primary hover:bg-primary/10 font-sans rounded-full px-8 hover:shadow-md transition-shadow"
             onClick={() => document.getElementById("founder")?.scrollIntoView({ behavior: "smooth" })}
           >
             <User className="w-4 h-4 mr-2" />
@@ -65,11 +96,13 @@ const HeroSection = () => (
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, delay: 0.3 }}
       >
-        <img
+        <motion.img
           src={heroIllustration}
           alt="Community members in a financial awareness discussion circle"
           className="w-full max-w-lg rounded-3xl drop-shadow-lg"
           loading="eager"
+          whileHover={{ scale: 1.02 }}
+          transition={{ type: "spring", stiffness: 200 }}
         />
       </motion.div>
     </div>
