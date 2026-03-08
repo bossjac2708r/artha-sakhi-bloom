@@ -20,11 +20,15 @@ const MetricCard = ({ icon: Icon, number, suffix, label, isVisible, delay }: {
       initial={{ opacity: 0, y: 20 }}
       animate={isVisible ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay }}
-      className="text-center p-8 rounded-xl bg-card border border-border hover:shadow-lg transition-shadow"
+      whileHover={{ y: -6, boxShadow: "0 12px 30px -8px hsl(var(--primary) / 0.15)" }}
+      className="text-center p-8 rounded-xl bg-card border border-border transition-colors group cursor-default"
     >
-      <div className="w-14 h-14 rounded-full bg-accent flex items-center justify-center mx-auto mb-4">
+      <motion.div
+        className="w-14 h-14 rounded-full bg-accent flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/10 transition-colors"
+        whileHover={{ rotate: 10 }}
+      >
         <Icon className="w-7 h-7 text-primary" />
-      </div>
+      </motion.div>
       <p className="text-4xl md:text-5xl font-bold text-primary font-serif mb-2">
         {count}{suffix}
       </p>
