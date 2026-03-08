@@ -6,6 +6,7 @@ import ImpactSection from "@/components/sections/ImpactSection";
 import ImpactSnapshot from "@/components/sections/ImpactSnapshot";
 import FinancialAwarenessExplainer from "@/components/sections/FinancialAwarenessExplainer";
 import WhyItMatters from "@/components/sections/WhyItMatters";
+import ImpactJourneySection from "@/components/sections/ImpactJourneySection";
 import IndiaMapSection from "@/components/sections/IndiaMapSection";
 import JourneyTimeline from "@/components/sections/JourneyTimeline";
 import GuidingValues from "@/components/sections/GuidingValues";
@@ -25,6 +26,7 @@ const Index = () => (
     <ImpactSnapshot />
     <FinancialAwarenessExplainer />
     <WhyItMatters />
+    <ImpactJourneySection />
     <IndiaMapSection />
     <JourneyTimeline />
     <GuidingValues />
