@@ -6,7 +6,7 @@ const FounderSpotlight = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section className="py-24 bg-earth-cream relative overflow-hidden">
+    <section id="founder" className="py-24 bg-earth-cream relative overflow-hidden">
       {/* Subtle pattern */}
       <div className="absolute inset-0 opacity-[0.03]" style={{
         backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
@@ -42,12 +42,11 @@ const FounderSpotlight = () => {
                   <p className="text-sm text-muted-foreground font-sans">Founder Photo</p>
                 </div>
               </div>
-              {/* Decorative frame accent */}
               <div className="absolute -bottom-3 -right-3 w-72 h-80 rounded-2xl border-2 border-primary/20 -z-10" />
             </div>
           </motion.div>
 
-          {/* Bio & Quote */}
+          {/* Bio */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={isVisible ? { opacity: 1, x: 0 } : {}}
@@ -58,18 +57,20 @@ const FounderSpotlight = () => {
 
             <div className="space-y-4 text-muted-foreground font-sans leading-relaxed mb-8">
               <p>
-                With a strong belief that financial awareness can transform lives, she has spent years guiding women and families toward better understanding of money, investments, and long-term financial thinking.
+                This community was founded and led by Ms Hema Poonia, who strongly believes that financial awareness has the power to transform families and communities.
               </p>
               <p>
-                Her mission continues to focus on building financially empowered women and financially aware families.
+                For years she has guided women and families toward understanding money, savings, investments, and long-term financial thinking. Her mission continues to focus on building financially empowered women and financially aware families.
               </p>
             </div>
 
             {/* Quote block */}
             <div className="relative bg-card rounded-xl p-6 border border-border">
               <Quote className="w-8 h-8 text-primary/30 absolute top-4 left-4" />
-              <blockquote className="pl-8 text-foreground italic font-serif leading-relaxed">
-                "Financial awareness is one of the most powerful forms of empowerment. When women understand money, they gain the confidence to make informed decisions, protect their families' future, and build long-term financial stability."
+              <blockquote className="pl-8 text-foreground italic font-serif leading-relaxed text-sm md:text-base">
+                "Financial awareness is one of the most powerful forms of empowerment. When women understand money, they gain the confidence to make informed decisions, protect their families' future, and build long-term financial stability.
+                <br /><br />
+                Through this initiative, my goal has always been simple — to make financial knowledge accessible, practical, and empowering for every woman and every family."
               </blockquote>
               <p className="pl-8 mt-4 text-sm text-primary font-sans font-medium">— Ms Hema Poonia</p>
             </div>
