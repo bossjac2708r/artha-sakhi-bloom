@@ -73,10 +73,10 @@ const HeroSection = () => (
           <Button
             size="lg"
             className="bg-primary text-primary-foreground hover:bg-primary/90 font-sans rounded-full px-8 hover:shadow-lg transition-shadow"
-            onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
+            onClick={() => document.getElementById("impact")?.scrollIntoView({ behavior: "smooth" })}
           >
             <ArrowDown className="w-4 h-4 mr-2" />
-            Learn About the Initiative
+            See Our Impact
           </Button>
           <Button
             variant="outline"
