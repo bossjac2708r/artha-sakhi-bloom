@@ -79,14 +79,10 @@ const IndiaMapSection = () => {
             strokeWidth="0.5"
             hoverColor="hsl(15, 50%, 65%)"
             onClick={(stateCode: string) => {
-              // no-op
-            }}
-            onMouseEnter={(stateCode: string) => {
               if (highlightedStates.includes(stateCode)) {
-                setHoveredState(stateCode);
+                setHoveredState(hoveredState === stateCode ? null : stateCode);
               }
             }}
-            onMouseLeave={() => setHoveredState(null)}
           />
 
           {/* Tooltip */}
