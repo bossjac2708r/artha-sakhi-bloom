@@ -9,13 +9,12 @@ export default {
       center: true,
       padding: "2rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": "1200px",
       },
     },
     extend: {
       fontFamily: {
-        serif: ["Playfair Display", "serif"],
-        sans: ["Source Sans 3", "sans-serif"],
+        sans: ["Inter", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -50,14 +49,6 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
-        },
-        earth: {
-          warm: "hsl(var(--earth-warm))",
-          brown: "hsl(var(--earth-brown))",
-          green: "hsl(var(--earth-green))",
-          sage: "hsl(var(--earth-sage))",
-          cream: "hsl(var(--earth-cream))",
-          terracotta: "hsl(var(--earth-terracotta))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
