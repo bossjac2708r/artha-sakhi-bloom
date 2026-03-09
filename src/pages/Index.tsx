@@ -5,6 +5,8 @@ import FocusSection from "@/components/sections/FocusSection";
 import ImpactSection from "@/components/sections/ImpactSection";
 import ImpactSnapshot from "@/components/sections/ImpactSnapshot";
 import FinancialAwarenessExplainer from "@/components/sections/FinancialAwarenessExplainer";
+import FinancialLiteracyCore from "@/components/sections/FinancialLiteracyCore";
+import EmpowermentFramework from "@/components/sections/EmpowermentFramework";
 import WhyItMatters from "@/components/sections/WhyItMatters";
 import ImpactJourneySection from "@/components/sections/ImpactJourneySection";
 import IndiaMapSection from "@/components/sections/IndiaMapSection";
@@ -25,6 +27,8 @@ const Index = () => (
     <ImpactSection />
     <ImpactSnapshot />
     <FinancialAwarenessExplainer />
+    <FinancialLiteracyCore />
+    <EmpowermentFramework />
     <WhyItMatters />
     <ImpactJourneySection />
     <IndiaMapSection />
