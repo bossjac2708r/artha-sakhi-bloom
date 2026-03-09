@@ -65,7 +65,11 @@ const Navbar = () => {
             <button
               key={link.id}
               onClick={() => scrollTo(link.id)}
-              className="px-3 py-1.5 text-sm font-sans text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-accent/50"
+              className={`px-3 py-1.5 text-sm font-sans transition-colors rounded-lg ${
+                activeId === link.id
+                  ? "text-primary font-semibold bg-primary/10"
+                  : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
+              }`}
             >
               {link.label}
             </button>
