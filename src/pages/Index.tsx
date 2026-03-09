@@ -16,6 +16,7 @@ import GuidingValues from "@/components/sections/GuidingValues";
 import CommunityMoments from "@/components/sections/CommunityMoments";
 import FounderSpotlight from "@/components/sections/FounderSpotlight";
 import MissionContinues from "@/components/sections/MissionContinues";
+import ContactSection from "@/components/sections/ContactSection";
 import Footer from "@/components/sections/Footer";
 import FloatingAssistant from "@/components/FloatingAssistant";
 
