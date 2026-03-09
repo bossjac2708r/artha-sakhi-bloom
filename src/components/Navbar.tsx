@@ -17,9 +17,20 @@ const navLinks = [
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeId, setActiveId] = useState("hero");
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 40);
+
+      const ids = navLinks.map((l) => l.id);
+      let current = ids[0];
+      for (const id of ids) {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top <= 120) current = id;
+      }
+      setActiveId(current);
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -54,7 +65,11 @@ const Navbar = () => {
             <button
               key={link.id}
               onClick={() => scrollTo(link.id)}
-              className="px-3 py-1.5 text-sm font-sans text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-accent/50"
+              className={`px-3 py-1.5 text-sm font-sans transition-colors rounded-lg ${
+                activeId === link.id
+                  ? "text-primary font-semibold bg-primary/10"
+                  : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
+              }`}
             >
               {link.label}
             </button>
@@ -84,7 +99,11 @@ const Navbar = () => {
                 <button
                   key={link.id}
                   onClick={() => scrollTo(link.id)}
-                  className="text-left px-3 py-2 text-sm font-sans text-muted-foreground hover:text-foreground hover:bg-accent/50 rounded-lg transition-colors"
+                  className={`text-left px-3 py-2 text-sm font-sans rounded-lg transition-colors ${
+                    activeId === link.id
+                      ? "text-primary font-semibold bg-primary/10"
+                      : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
+                  }`}
                 >
                   {link.label}
                 </button>
