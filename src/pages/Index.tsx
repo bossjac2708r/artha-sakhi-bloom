@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/sections/HeroSection";
 import AboutSection from "@/components/sections/AboutSection";
 import MissionSection from "@/components/sections/MissionSection";
@@ -20,22 +21,23 @@ import FloatingAssistant from "@/components/FloatingAssistant";
 
 const Index = () => (
   <main>
-    <HeroSection />
-    <AboutSection />
-    <MissionSection />
-    <FocusSection />
-    <ImpactSection />
+    <Navbar />
+    <div id="hero"><HeroSection /></div>
+    <div id="about"><AboutSection /></div>
+    <div id="mission"><MissionSection /></div>
+    <div id="focus"><FocusSection /></div>
+    <div id="impact"><ImpactSection /></div>
     <ImpactSnapshot />
     <FinancialAwarenessExplainer />
     <FinancialLiteracyCore />
-    <EmpowermentFramework />
+    <div id="framework"><EmpowermentFramework /></div>
     <WhyItMatters />
-    <ImpactJourneySection />
+    <div id="journey"><ImpactJourneySection /></div>
     <IndiaMapSection />
     <JourneyTimeline />
     <GuidingValues />
-    <CommunityMoments />
-    <FounderSpotlight />
+    <div id="community"><CommunityMoments /></div>
+    <div id="founder"><FounderSpotlight /></div>
     <MissionContinues />
     <Footer />
     <FloatingAssistant />
