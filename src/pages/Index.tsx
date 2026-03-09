@@ -40,6 +40,7 @@ const Index = () => (
     <div id="community"><CommunityMoments /></div>
     <div id="founder"><FounderSpotlight /></div>
     <MissionContinues />
+    <div id="contact"><ContactSection /></div>
     <Footer />
     <FloatingAssistant />
   </main>
