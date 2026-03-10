@@ -12,7 +12,6 @@ const navLinks = [
   { label: "Journey", id: "journey" },
   { label: "Community", id: "community" },
   { label: "Founder", id: "founder" },
-  { label: "Contact", id: "contact" },
 ];
 
 const Navbar = () => {
